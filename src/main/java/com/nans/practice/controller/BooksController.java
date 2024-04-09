@@ -5,20 +5,23 @@ import com.nans.practice.service.BooksService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/books")
 @AllArgsConstructor
+@SuppressWarnings("unused")
 public class BooksController {
 
     private final BooksService booksService;
 
     @GetMapping("/")
-    public void getData() {
-        booksService.fetchBooks();
+    public List<Books> getData() {
+        return booksService.fetchBooks();
     }
 
     @PostMapping("/")
-    public void saveData(@RequestBody Books book) {
-        booksService.saveBooks(book);
+    public Books saveData(@RequestBody Books book) {
+        return booksService.saveBooks(book);
     }
 }
