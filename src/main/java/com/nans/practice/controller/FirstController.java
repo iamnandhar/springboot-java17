@@ -1,0 +1,14 @@
+package com.nans.practice.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("api/v1")
+public class FirstController {
+
+    @RequestMapping("/hello")
+    public String sayHello() {
+        return "Hello Nanda, This is your first Spring io appln";
+    }
+}
