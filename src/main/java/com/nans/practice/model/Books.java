@@ -3,11 +3,19 @@ package com.nans.practice.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@AllArgsConstructor
+import java.math.BigDecimal;
+
+@Document(collection = "Books")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Books {
-    int bookId;
-    String bookName;
+    @Id
+    private String id;
+    private String bookName;
+    private String author;
+    private BigDecimal price;
 }
